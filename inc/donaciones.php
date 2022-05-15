@@ -1,7 +1,6 @@
 
 <div id="central-content">
 
-
 <br> <br> <br> <br>
     <div class="MascotaLover">
       <h1 class="display-4">DONACIONES</h1>
@@ -158,5 +157,4 @@
                   </div>
                  
             </div>
-
 </div>

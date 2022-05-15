@@ -1,3 +1,4 @@
+
 console.log('data ok')
 let regiones = []
 let comunas = []
@@ -46,3 +47,9 @@ const setcomunas = (region)=>{
     let select = `<select name="cars" id="cars" form="carform">${options}</select>`
     document.getElementById('comunas').innerHTML = select
 }
+
+
+
+
+
+

@@ -1,7 +1,8 @@
 <div id="central-content">
-<br><br>
+<br><br><br><br>
+    
 
-<div class="MascotaLover">
+    <div class="MascotaLover">
         <hr class="my-4">
         <h1 class="display-4" id="Producto_tienda">PRODUCTOS</h1>
         <p class="lead">Aqui podras encontrar los mejores productos para tu regalon de la casa </p>
@@ -484,5 +485,12 @@
   </div>
 </div>
 <!-- Fin Modal 9 -->
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="js/code.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </div>

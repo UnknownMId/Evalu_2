@@ -1,14 +1,14 @@
 
+<script src="js/code.js"></script>
 <div id="central-content">
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="js/code.js"> </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  
+
+ 
 <br>
 <br>
 <br>
 <br>
     <div class="MascotaLover">
+
       <h1 class="display-4">CONTACTANOS</h1>
       <p class="lead">Aqui puedes dejar tus datos para contactarte con nosotros.</p>
       <hr class="my-4">
@@ -37,16 +37,12 @@
                         <input type="email" class="form-control" id="inputEmail" placeholder="tucorreo@dominio.cl" required>
                         </div>
                         <div class="col-md-6">
-                        <label for="inputCity" class="form-label">Ciudad</label>
-                        <input type="text" class="form-control" id="inputCity">
-                        </div>
-
-
-
-                        <div class="col-md-6">
-                          <label >Indique su genero</label>
+                          <label >Region o Ciudad</label>
                           <div id='formulario'></div>
+                          <br>
+                          <label >Comuna</label>
                           <div id='comunas' ></div>
+
         
                         </div>
                         <div class="col-12">
