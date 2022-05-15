@@ -1,5 +1,11 @@
 <div id="central-content">
-<br><br><h1 class="display-4">QUIENES SOMOS</h1>
+    <!--  NOSOTROS  -->
+    <br>
+<br>
+<br>
+<br>
+    <div class="MascotaLover">
+      <h1 class="display-4">QUIENES SOMOS</h1>
       <p class="lead">Somos un grupo de emprendedores con las ganas de aportar <br>y ayudar a la sociedad 
         a nuestras preciadas mascotas las cuales <br> son una parte muy importante de nuestras vidas.
       </p>
@@ -52,5 +58,6 @@
         </div>
       </div>
     </div>
+    <br><br>
 
 </div>

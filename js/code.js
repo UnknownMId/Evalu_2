@@ -1,49 +1,48 @@
+console.log('data ok')
+let regiones = []
+let comunas = []
+fetch('https://apis.digital.gob.cl/dpa/regiones/')
+.then(response => response.json())
+.then((data) =>{ console.log(data)
+    let options = data.map((item)=>{return `<option value="${item.nombre}">${item.nombre}</option>`})
+    options = options.join('')
+    //console.log(options)
+    let select = `<select onchange='setcomunas(this.value)' name="cars" id="cars" form="carform">${options}</select>`
+    console.log('cargada regiones')
+    document.getElementById('formulario').innerHTML = select
+    //console.log('regiones cargadas')
+    regiones = data
+});
 
-(function($bs) {
-    const CLASS_NAME = 'has-child-dropdown-show';
-        $bs.Dropdown.prototype.toggle = function(_orginal) {
-            return function() {
-                document.querySelectorAll('.' + CLASS_NAME).forEach(function(e) {
-                    e.classList.remove(CLASS_NAME);
-                });
-                let dd = this._element.closest('.dropdown').parentNode.closest('.dropdown');
-                for (; dd && dd !== document; dd = dd.parentNode.closest('.dropdown')) {
-                    dd.classList.add(CLASS_NAME);
-                }
-                return _orginal.call(this);
-            }
-        }($bs.Dropdown.prototype.toggle);
+fetch(`https://apis.digital.gob.cl/dpa/comunas`)
+.then(response => response.json())
+.then((data) =>{ //console.log(data)
+    console.log('cargadas comuna')
+    comunas = data
+});
 
-        document.querySelectorAll('.dropdown').forEach(function(dd) {
-            dd.addEventListener('hide.bs.dropdown', function(e) {
-                if (this.classList.contains(CLASS_NAME)) {
-                    this.classList.remove(CLASS_NAME);
-                    e.preventDefault();
-                }
-                if(e.clickEvent && e.clickEvent.composedPath().some(el=>el.classList && el.classList.contains('dropdown-toggle'))){
-                    e.preventDefault();
-                }
-                e.stopPropagation(); // do not need pop in multi level mode
-            });
-        });
-
-        // for hover
-        function getDropdown(element) {
-            return $bs.Dropdown.getInstance(element) || new $bs.Dropdown(element);
+const setcomunas = (region)=>{
+    console.log(region,regiones)
+    let id
+    for(let i=0;i<regiones.length;i++){
+        if(region===regiones[i].nombre){
+            id = regiones[i].codigo
+            break
         }
-
-        document.querySelectorAll('.dropdown-hover, .dropdown-hover-all .dropdown').forEach(function(dd) {
-            dd.addEventListener('mouseenter', function(e) {
-                let toggle = e.target.querySelector(':scope>[data-bs-toggle="dropdown"]');
-                if (!toggle.classList.contains('show')) {
-                    getDropdown(toggle).toggle();
-                }
-            });
-            dd.addEventListener('mouseleave', function(e) {
-                let toggle = e.target.querySelector(':scope>[data-bs-toggle="dropdown"]');
-                if (toggle.classList.contains('show')) {
-                    getDropdown(toggle).toggle();
-                }
-            });
-        });
-    })(bootstrap);
+    }
+    let data = []
+    for(let i=0;i<comunas.length;i++){
+        let cod = comunas[i].codigo
+        console.log(id)
+        if(id===comunas[i].codigo.substr(0,2)){
+            data.push(comunas[i])
+        }
+    }
+    console.log(data)
+    //data = data.join('')
+    let options = data.map((item)=>{return `<option value="${item.nombre}">${item.nombre}</option>`})
+    options = options.join('')
+    console.log(options)
+    let select = `<select name="cars" id="cars" form="carform">${options}</select>`
+    document.getElementById('comunas').innerHTML = select
+}
