@@ -1,5 +1,5 @@
-
 <script src="js/code.js"></script>
+
 <div id="central-content">
 
  
